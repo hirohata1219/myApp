@@ -1,0 +1,50 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-container">
+    <div>
+      <%= form.label :name, '名前', style: "display: block" %>
+      <%= form.text_field :name, placeholder: "例）全国　太郎" %>
+    </div>
+
+    <div>
+      <%= form.label :age, '年齢', style: "display: block" %>
+      <%= form.number_field :age, placeholder: "例）20" %>
+    </div>
+
+    <div>
+      <%= form.label :tel, '電話番号', style: "display: block" %>
+      <%= form.text_field :tel, placeholder: "例）080-0000-0000" %>
+    </div>
+
+    <div>
+      <%= form.label :email, 'メールアドレス', style: "display: block" %>
+      <%= form.email_field :email, placeholder: "例）taro@xxxx.com" %>
+    </div>
+
+    <div>
+      <%= form.label :password, 'パスワード', style: "display: block" %>
+      <%= form.password_field :password %>
+    </div>
+
+    <div>
+      <%= form.label :password_confirmation, 'パスワード確認', style: "display: block" %>
+      <%= form.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div>
+      <%= form.submit '登録' %>
+    </div>
+  </div>
+
+<% end %>

@@ -2,6 +2,15 @@ require_relative "boot"
 
 require "rails/all"
 
+
+require "rails"
+require "active_model/railtie"
+require "active_job/railtie"
+require "active_record/railtie"
+require "action_controller/railtie"
+require "action_view/railtie"
+require "importmap-rails"
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -15,6 +24,9 @@ module Rails8
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
+    config.i18n.default_locale = :ja
+    config.i18n.available_locales = [:en, :ja]
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml')]
 
     # Configuration for the application, engines, and railties goes here.
     #
