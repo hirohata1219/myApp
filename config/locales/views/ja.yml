@@ -3,10 +3,13 @@ ja:
     submit:
       create: 登録
       submit: 保存
+      edit: 編集
       update: 更新
+      delete: 削除
     label:
       email: メールアドレス
       password: パスワード
+
   defaults:
     create: 作成
     post: 投稿
@@ -17,7 +20,8 @@ ja:
       updated: "%{item}を更新しました"
       not_updated: "%{item}を更新出来ませんでした"
       deleted: "%{item}を削除しました"
-      require_login: ログインしてください
+    require_login: ログインしてください
+
   header:
     login: ログイン
     logout: ログアウト
@@ -26,6 +30,7 @@ ja:
     create_board: 掲示板作成
     bookmark_index: ブックマーク一覧
     profile: プロフィール
+
   user_sessions:
     new:
       title: ログイン
@@ -37,6 +42,7 @@ ja:
       failure: ログインに失敗しました
     destroy:
       success: ログアウトしました
+
   users:
     new:
       title: ユーザー登録
@@ -44,6 +50,12 @@ ja:
     create:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
+    update:
+      success: 更新が完了しました
+      failure: 更新に失敗しました
+    destroy:
+      success: 削除が完了しました
+
   posts:
     new:
       title: 掲示板作成
@@ -53,11 +65,42 @@ ja:
       title: 掲示板一覧
     edit:
       title: 掲示板編集
-    bookmarks:
-      title: ブックマーク一覧
-      no_result: ブックマーク中の掲示板がありません。
+
   bookmarks:
+    title: ブックマーク一覧
+    no_result: ブックマーク中の掲示板がありません。
     create:
       success: ブックマークしました
     destroy:
       success: ブックマークを外しました
+
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: "を入力してください"
+            content:
+              blank: "を入力してください"
+        user:
+          attributes:
+            name:
+              blank: "を入力してください"
+            age:
+              blank: "を入力してください"
+              not_a_number: "は数値で入力してください"
+            phone_number:
+              blank: "を入力してください"
+              not_a_number: "は数値で入力してください"
+            email:
+              blank: "を入力してください"
+              taken: "は既に使用されています"
+            password:
+              blank: "を入力してください"
+            password_confirmation:
+              blank: "を入力してください"
+
+  errors:
+    messages:
+      too_short: "%{count}文字以上で入力してください"

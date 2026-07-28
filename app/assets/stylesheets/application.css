@@ -105,3 +105,7 @@ ul li p {
   margin-top: 0;    /* 上の余白も無効化 */
   padding: 0;
 }
+
+#error_explanation {
+  font-size: 12px;
+}

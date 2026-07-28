@@ -3,9 +3,8 @@
     <h1>挑戦カレンダー</h1>
     <nav>
       <ul class="navbar-nav flex-row ms-auto nav-menu">
-        <li class="nav-item me-3"><%= link_to "ホーム", "#", class: "nav-link" %></li>
-        <li class="nav-item me-3"><%= link_to "詳細", "#", class: "nav-link" %></li>
-        <li class="nav-item"><%= button_to "ログアウト", logout_path, method: :delete, 
+        <li class="nav-item me-3"> <%= link_to t('header.profile'), user_path(current_user), class: 'dropdown-item' %> </li>
+        <li><%= button_to "ログアウト", logout_path, method: :delete, 
           data: { turbo_confirm: "ログアウトしますか？" }, class: "btn btn-danger btn-sm" %> </li>
       </ul>
     </nav>

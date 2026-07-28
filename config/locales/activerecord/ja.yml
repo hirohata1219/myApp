@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      board: 掲示板
+      comment: コメント
+    attributes:
+      user:
+        name: 名前
+        last_name: 姓
+        first_name: 名
+        age: 年齢
+        phone_number: 電話番号
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
+      board:
+        title: タイトル
+        content: 内容
+        body: 本文
+        board_image: サムネイル
+      comment:
+        body: コメント

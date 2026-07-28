@@ -1,3 +1,4 @@
+<%= render 'shared/error_messages', object: @post %>
 <%= form_with model: @post, html: {class: "form-container"} do |form| %>
   <div class="form-input">
     <%= form.label :title %>
