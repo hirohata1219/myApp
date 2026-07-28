@@ -1,16 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
+
+<div class="form-container">
 <%= render @user %>
-
-<div>
-  <%= link_to t('helpers.submit.edit'), edit_user_path(@user),
-            class: "link-button text-center d-block mx-auto",
-            style: "width: 100px; margin-top: 20px;" %> |
-  <%= link_to "投稿一覧ページに戻る", posts_path,
-            class: "link-button text-center d-block mx-auto",
-            style: "width: 200px;" %>
-
-  <%= button_to t('helpers.submit.delete'), @user, method: :delete,
-            class: "link-delete-button text-center d-block mx-auto",
-            style: "width: 100px; margin-top: 20px;" %>
+  <div class="d-flex gap-3">
+      <div>
+        <%= link_to t('helpers.submit.edit'), edit_user_path(@user),
+                  class: "link-button text-center d-block mx-auto",
+                  style: "width: 80px; margin-top: 20px;" %>
+      </div>
+      <div>
+        <%= button_to t('helpers.submit.delete'), @user, method: :delete,
+                  class: "link-delete-button text-center d-block mx-auto",
+                  style: "width: 80px; margin-top: 20px;" %>
+      </div>
+  </div>
 </div>
+  <%= link_to "投稿一覧ページに戻る", posts_path,
+            class: "text-center d-block mx-auto",
+            style: "width: 200px; margin-top: 50px;" %>

@@ -1,12 +1,12 @@
 <header>
-<nav class="navbar navbar-expand-xl navbar-light bg-light">
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><h1>挑戦カレンダー</h1></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse show" id="navbarBasic">
-      <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-xl-0 none">
       <% unless current_page?(login_path) %>
         <li class="nav-item">
           <%= link_to "ログイン", login_path, class: "nav-link" %>
@@ -16,10 +16,6 @@
         </li>
         <% end %>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>
